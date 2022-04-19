@@ -3,8 +3,10 @@ using namespace std;
 
 int main()
 {
-    char num;
-    char symbol;
-    char alphaLow;
-    char alphaUpp;
+    string num = "01234567890";
+    string symbol = "!@#$%^&*()_+=-[]{};':',.?/><";
+    string alphaLow = "abcdefghijklmnopqrstuvwxyz";
+    string alphaUpp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    return 0;
 }
