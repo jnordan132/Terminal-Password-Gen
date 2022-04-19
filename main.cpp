@@ -1,12 +1,32 @@
 #include <iostream>
 using namespace std;
 
-int main()
+// randomly generate a integer in the range 1 to 4
+int selectArray()
 {
-    string num = "01234567890";
-    string symbol = "!@#$%^&*()_+=-[]{};':',.?/><";
-    string alphaLow = "abcdefghijklmnopqrstuvwxyz";
-    string alphaUpp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    srand(time(NULL));
+    int i = rand() % 5;
+    if (i == 0)
+        i++;
+    return i;
+}
 
-    return 0;
+// randomly generate an integer in the range 0 to 25
+int getKey()
+{
+    srand(time(NULL));
+
+    int key = rand() % 26;
+    return key;
+}
+
+void generate_password(int length)
+{
+    // Intializing result string.
+    string password = "";
+
+    string alphabet = "abcdefghijklmnopqrstuvwxyz";
+    string ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    string s_symbol = "!@#$%&";
+    string number = "0123456789";
 }
