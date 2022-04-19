@@ -99,3 +99,59 @@ void generate_password(int length)
     cout << "\n\nPress any key continue \n";
     getchar();
 }
+
+int main()
+{
+    int opt, length;
+    // Menu
+    do
+    {
+        cout << "\n-----------------------------\n";
+        cout << "  RANDOM PASSWORD GENERATOR\n";
+        cout << "------------------------------\n\n";
+        cout << "    1. Generate Password"
+             << "\n";
+        cout << "    2. Exit"
+             << "\n\n";
+        cout << "Press 1 to Generate Password, Press 2 to exit: ";
+        cin >> opt;
+
+        switch (opt)
+        {
+        case 1:
+            cout << "Enter Length:  ";
+            cin >> length;
+            // if length is less than 7 , program  will show error
+            if (length < 2)
+            {
+                cout << "\nError: Passwords Minimum Length Should be at least 2\n";
+                cout << "Press any key to try again \n";
+                getchar();
+            }
+            // Length should not exceed 100 , program should show error if it exceeds
+            else if (length > 100)
+            {
+                cout << "\nError: Password Maximum Length Should be Less Than 100\n";
+                cout << "Press any key to try again \n";
+                getchar();
+            }
+            // Otherwise call generate_password() function to generate password
+            else
+                generate_password(length);
+            break;
+
+        default:
+            // If invalid option is chosen by user it will also show error
+            if (opt != 2)
+            {
+                printf("\nInvalid choice\n");
+                printf("Please Press 1 to generate password and 2) to exit.\n");
+                cout << "Press any key to try again \n";
+                getchar();
+            }
+            break;
+        }
+    } while (opt != 2);
+
+    return 0;
+}
